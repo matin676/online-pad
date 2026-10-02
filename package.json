@@ -1,16 +1,29 @@
 {
-  "homepage": "https://matin676.github.io/online-pad",
-  "name": "client",
+  "name": "online-pad",
+  "version": "1.0.0",
+  "description": "Real-time collaborative notepad with Markdown preview, version history, QR sharing, and mobile-optimized responsiveness.",
   "private": true,
-  "version": "0.0.0",
+  "homepage": "https://matin676.github.io/online-pad",
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "build": "tsc && vite build",
+    "typecheck": "tsc --noEmit",
+    "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist",
-    "build": "vite build",
-    "preview": "vite preview"
+    "deploy": "gh-pages -d dist"
   },
+  "keywords": [
+    "notepad",
+    "collaborative-editor",
+    "real-time",
+    "markdown-preview",
+    "firebase",
+    "react",
+    "material-ui"
+  ],
+  "author": "matin676",
+  "license": "MIT",
   "dependencies": {
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.1",
@@ -19,6 +32,7 @@
     "firebase": "^12.10.0",
     "gh-pages": "^6.3.0",
     "lucide-react": "^0.577.0",
+    "qrcode.react": "^4.2.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-markdown": "^10.1.0",

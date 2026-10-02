@@ -56,21 +56,32 @@ export const getTheme = (mode: ThemeMode, accent: AccentColor) => {
     components: {
       MuiButton: {
         styleOverrides: {
-          root: {
-            textTransform: 'none',
-            padding: '10px 24px',
+          root: ({ theme: t }) => ({
+            textTransform: 'none' as const,
             fontWeight: 600,
-            minHeight: '48px',
-            minWidth: '48px',
-          },
+            minHeight: '36px',
+            minWidth: '36px',
+            padding: '8px 16px',
+            [t.breakpoints.up('sm')]: {
+              minHeight: '48px',
+              minWidth: '48px',
+              padding: '10px 24px',
+            },
+          }),
         },
       },
       MuiIconButton: {
         styleOverrides: {
-          root: {
-            minHeight: '48px',
-            minWidth: '48px',
-          }
+          root: ({ theme: t }) => ({
+            minHeight: '36px',
+            minWidth: '36px',
+            padding: '6px',
+            [t.breakpoints.up('sm')]: {
+              minHeight: '48px',
+              minWidth: '48px',
+              padding: '8px',
+            },
+          }),
         }
       },
       MuiPaper: {

@@ -6,6 +6,7 @@ import { getTheme, ThemeMode, AccentColor } from '../theme';
 
 // Lazy load features for performance (Code Splitting)
 const LandingPage = lazy(() => import('../features/landing/components/LandingPage').then(m => ({ default: m.LandingPage })));
+const ShortcutsPage = lazy(() => import('../features/shortcuts/components/ShortcutsPage').then(m => ({ default: m.ShortcutsPage })));
 const EditorView = lazy(() => import('../features/editor/components/EditorView').then(m => ({ default: m.EditorView })));
 
 const queryClient = new QueryClient({
@@ -49,6 +50,7 @@ export const App: React.FC = () => {
           }>
             <Routes>
               <Route path="/" element={<LandingPage {...themeProps} />} />
+              <Route path="/shortcuts" element={<ShortcutsPage {...themeProps} />} />
               <Route path="/:slug" element={<EditorView {...themeProps} />} />
             </Routes>
           </Suspense>
